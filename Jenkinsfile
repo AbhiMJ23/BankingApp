@@ -1,4 +1,4 @@
-pipeline {
+ppipeline {
     agent { label 'slave' }	
 
     tools {
@@ -41,7 +41,7 @@ pipeline {
 		stage('Push2DockerHub') {
 
 			steps {
-				sh "abhimj23/banking-project:latest"
+				sh "docker push abhimj23/banking-project:latest"
 			}
 		}
         stage('Deploy to Kubernetes Dev Environment') {
