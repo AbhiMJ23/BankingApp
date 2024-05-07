@@ -27,9 +27,9 @@ pipeline {
        stage("Docker build"){
             steps {
 				sh 'docker version'
-				sh "docker build -t loksaieta/bankapp-eta-app:${BUILD_NUMBER} ."
+				sh "docker build -t abhimj23/banking-project:${BUILD_NUMBER} ."
 				sh 'docker image list'
-				sh "docker tag loksaieta/bankapp-eta-app:${BUILD_NUMBER} loksaieta/bankapp-eta-app:latest"
+				sh "docker tag abhimj23/banking-project:${BUILD_NUMBER} abhimj23/banking-project:latest"
             }
         }
 		stage('Login2DockerHub') {
@@ -41,7 +41,7 @@ pipeline {
 		stage('Push2DockerHub') {
 
 			steps {
-				sh "docker push loksaieta/bankapp-eta-app:latest"
+				sh "abhimj23/banking-project:latest"
 			}
 		}
         stage('Deploy to Kubernetes Dev Environment') {
