@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bankapp-eta-container
-        image: abhimj23/banking-project
+        image: abhimj23/banking-project:latest
         ports:
         - containerPort: 8092
 ---
